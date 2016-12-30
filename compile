@@ -1,0 +1,9 @@
+#!/bin/sh
+FILE=$1
+
+echo "Filename: ${FILE%.*}"
+echo "Extension: ${FILE#*.}"
+
+RESULT=${FILE%.*}
+
+g++ $FILE -o $RESULT -O3 -std=c++11 -lpthread -ltins
